@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 14:37:13 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:53:16 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 16:12:23 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/10/27 16:13:16 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_list
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_list	*tmp;
 
-#endif
+	tmp = lst;
+	while (tmp)
+	{
+		f(tmp->content);
+		tmp = tmp->next;
+	}
+}

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 14:37:13 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:53:16 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 15:29:48 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/10/27 15:30:03 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_list
+void	ft_putendl_fd(char *str, int fd)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	int	i;
 
-#endif
+	i = 0;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
+}

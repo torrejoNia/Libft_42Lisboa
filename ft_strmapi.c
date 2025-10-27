@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 14:37:13 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:53:16 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 15:16:48 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/10/27 15:17:22 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_list
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	unsigned int i;
+	char *res;
 
-#endif
+	res = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		res[i] = (*f)(i, s[i]);
+		i++;
+	}
+	res[i] = 0;
+	return (res);
+}

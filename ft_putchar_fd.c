@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 14:37:13 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:53:16 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 15:21:54 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/10/27 15:24:09 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct s_list
+void	ft_putchar_fd(char c, int fd)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-#endif
+	write(fd, &c, 1);
+}
