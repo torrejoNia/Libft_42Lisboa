@@ -6,11 +6,21 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 12:51:02 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 16:48:33 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:02:31 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+
+
+
+
+
+
+
+
+
+
+
 
 int	ft_isalpha(int c)
 {
