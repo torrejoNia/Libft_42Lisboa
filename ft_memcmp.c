@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 16:40:25 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 15:16:18 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/11/01 15:01:54 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/11/01 15:02:23 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "libft.h"
-# include <stdio.h>
 
-int	ft_tolower(int c)
+int memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	
 }

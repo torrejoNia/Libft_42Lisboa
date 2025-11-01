@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:30:27 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/31 18:02:46 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:37:36 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd)
 	write(fd, &c, 1);
 }
 
-
+/*
 int	main(void)
 {
 	long	i;
@@ -39,5 +39,5 @@ int	main(void)
 	i = -2147483647;
 	ft_putnbr_fd(i, 1);
 	return (0);
-}
+} */
 
