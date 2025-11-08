@@ -13,6 +13,8 @@
 # include "libft.h"
 # include <stdio.h>
 
+/* void	ft_putstr_fd(char *str, int fd); */
+
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	char    *t_src;
@@ -36,3 +38,13 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+/*
+int main (void)
+{
+	char s1[] = "hi";
+    char s4[] = "hello world";
+	ft_memmove(s4, s1, 2);
+	ft_putstr_fd(s4, 1);
+	return (0);
+} */

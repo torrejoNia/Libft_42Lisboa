@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 # include "libft.h"
-# include <stdio.h>
+
+/* void	ft_putchar_fd(char c, int fd); */
 
 int	ft_tolower(int c)
 {
@@ -19,3 +20,14 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
+
+/*
+int	main(void)
+{
+	int i;
+	int j;
+
+	i = 'A';
+	j = ft_tolower(i);
+	ft_putchar_fd(j, 1);
+} */

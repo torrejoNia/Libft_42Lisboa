@@ -13,6 +13,9 @@
 # include "libft.h"
 # include <stdio.h>
 
+/* void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd); */
+
 char *ft_strchr(const char *s, int c)
 {
 	unsigned int	i;
@@ -30,3 +33,17 @@ char *ft_strchr(const char *s, int c)
 		return ((char *) &s[i]);
 	return (NULL);
 }
+
+/*
+int main (void)
+{
+	char a; 
+	a = 'o';
+	char* b;
+
+    char s4[] = "hello world";
+	b = ft_strchr(s4, a);
+	ft_putchar_fd(*b, 1);
+	ft_putstr_fd(b, 1);
+	return (0);
+} */

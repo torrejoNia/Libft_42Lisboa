@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* void	ft_putnbr_fd(int n, int fd); */
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
@@ -25,3 +27,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main (void)
+{
+	char s1[] = "hi";
+    char s2[] = "hello world";
+	int i;
+
+	i = ft_strncmp(s1, s2, 2);
+	ft_putnbr_fd(i, 1);
+	return (0);
+} */

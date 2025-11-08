@@ -11,7 +11,12 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+/* void	ft_putstr_fd(char *str, int fd);
+void	ft_putnbr_fd(int n, int fd); */
+
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -33,3 +38,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dst_len + src_len);
 }
+
+/*
+int	main(void)
+{
+	char s1[] = "hi";
+    char s4[15] = "hello world";
+	size_t i;
+	i = ft_strlcat(s4, s1, 15);
+	ft_putstr_fd(s4, 1);
+	ft_putnbr_fd(i, 1);
+	return (0);
+} */

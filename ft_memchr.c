@@ -12,6 +12,9 @@
 
 # include "libft.h"
 
+ /* void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd); */
+
 void *ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char *str;
@@ -29,3 +32,17 @@ void *ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*
+int main (void)
+{
+	char a; 
+	a = 'o';
+	char* b;
+
+    char s4[] = "hello world";
+	b = ft_memchr(s4, a, 10);
+	ft_putchar_fd(*b, 1);
+	ft_putstr_fd(b, 1);
+	return (0);
+} */
