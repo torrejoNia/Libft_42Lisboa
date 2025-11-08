@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:00:58 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/25 16:04:51 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 13:34:23 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t src_len;
-	size_t dst_len;
+	size_t	src_len;
+	size_t	dst_len;
 
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
@@ -43,7 +43,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 int	main(void)
 {
 	char s1[] = "hi";
-    char s4[15] = "hello world";
+	char s4[15] = "hello world";
 	size_t i;
 	i = ft_strlcat(s4, s1, 15);
 	ft_putstr_fd(s4, 1);

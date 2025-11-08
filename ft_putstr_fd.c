@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:26:36 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:26:46 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:52:41 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_putstr_fd(char *str, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		write(fd, &str[i], 1);

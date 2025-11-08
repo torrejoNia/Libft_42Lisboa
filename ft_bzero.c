@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:56:06 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 16:44:49 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:41:06 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*a;
+	unsigned char	*a;
 
-	a = (char *)s;
+	a = (unsigned char *)s;
 	while (n > 0)
 	{
 		*(a++) = 0;

@@ -6,24 +6,24 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:08:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/25 17:13:53 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:42:04 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
- /* void	ft_putchar_fd(char c, int fd);
+/* void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd); */
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *str;
-    size_t i;
-    unsigned char uc;
-	
-	str = (unsigned char *) s;
-    uc = (unsigned char) c;
-    i = 0;
+	const unsigned char	*str;
+	size_t			i;
+	unsigned char	uc;
+
+	str = (unsigned char *)s;
+	uc = (unsigned char)c;
+	i = 0;
 	while (i < n)
 	{
 		if (str[i] == uc)
@@ -36,11 +36,11 @@ void *ft_memchr(const void *s, int c, size_t n)
 /*
 int main (void)
 {
-	char a; 
+	char a;
 	a = 'o';
 	char* b;
 
-    char s4[] = "hello world";
+	char s4[] = "hello world";
 	b = ft_memchr(s4, a, 10);
 	ft_putchar_fd(*b, 1);
 	ft_putstr_fd(b, 1);

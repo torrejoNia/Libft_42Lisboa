@@ -6,16 +6,17 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:07:25 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 16:09:20 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:30:30 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list *lst, void (*del)(void *))
+void ft_lstclear(t_list **lst, void (*del)(void *))
 {
     t_list *tmp;
-	
+	if (!lst || !del)
+		return ;
     while (*lst)
     {
         tmp = (*lst)->next;

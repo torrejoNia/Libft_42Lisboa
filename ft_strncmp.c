@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:07:25 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/25 17:08:06 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 13:35:25 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
@@ -32,7 +32,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int main (void)
 {
 	char s1[] = "hi";
-    char s2[] = "hello world";
+	char s2[] = "hello world";
 	int i;
 
 	i = ft_strncmp(s1, s2, 2);

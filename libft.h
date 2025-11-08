@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:37:13 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 15:32:31 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:17:13 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

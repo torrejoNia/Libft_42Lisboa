@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:05:51 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 17:19:20 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:45:48 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*tmp_dst;
-	unsigned char	*tmp_src;
+	const unsigned char	*tmp_src;
 
 	if (dst == (void *)0 && src == (void *)0)
 		return (dst);

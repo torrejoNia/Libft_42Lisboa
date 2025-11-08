@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:59:58 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:01:05 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:53:33 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
+	if(!s1 || !s2)
+		return(NULL);
 	res = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
@@ -30,3 +32,4 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		res[j++] = s2[i];
 	return (res);
 }
+

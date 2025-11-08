@@ -6,9 +6,13 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:33:07 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 14:33:34 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:12:12 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+/* void	ft_putnbr_fd(int n, int fd); */
 
 int	ft_isspace(int c)
 {
@@ -37,35 +41,18 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] && str[i] >= 48 && str[i] <= 57)
 	{
-		result = result * 10;
-		result = result + str[i] - 48;
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	result = result * sign;
 	return (result);
 }
 
-void	ft_putnbr(int nb)
-{
-	char	c;
-
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-	}
-	c = '0' + (nb % 10);
-	write(1, &c, 1);
-}
-
+/*
 int	main(void)
 {
 	int i;
-	char *str = " --+---+0081234ab567";
+	char *str = " -8123a4567";
 	i = ft_atoi(str);
-	ft_putnbr(i);
-}
+	ft_putnbr_fd(i, 1);
+} */

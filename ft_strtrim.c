@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:04:52 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:06:58 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 18:00:00 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int	i;
 	int	j;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	if (ft_strlen(s1) == 0)

@@ -6,42 +6,42 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:45:10 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/25 16:51:42 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:58:16 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-# include <stdio.h>
+#include "libft.h"
+#include <stdio.h>
 
 /* void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd); */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
+	int	i;
 	char			cc;
 
-	cc = (char) c;
+	cc = (char)c;
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == cc)
-			return ((char *) &s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	if (s[i] == cc)
-		return ((char *) &s[i]);
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
 /*
 int main (void)
 {
-	char a; 
+	char a;
 	a = 'o';
 	char* b;
 
-    char s4[] = "hello world";
+	char s4[] = "hello world";
 	b = ft_strchr(s4, a);
 	ft_putchar_fd(*b, 1);
 	ft_putstr_fd(b, 1);

@@ -6,24 +6,25 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:22:54 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 17:35:17 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:47:57 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-# include <stdio.h>
+#include "libft.h"
+#include <stdio.h>
 
 /* void	ft_putstr_fd(char *str, int fd); */
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char    *t_src;
-    char    *t_dst;
-    size_t    i;
+	const unsigned char	*t_src;
+	unsigned char	*t_dst;
+	size_t	i;
+
 	if (!dst && !src)
 		return (NULL);
-	t_src = (char *) src;
-	t_dst = (char *) dst;
+	t_src = (const unsigned char *)src;
+	t_dst = (unsigned char *)dst;
 	i = 0;
 	if (t_dst > t_src)
 		while (len-- > 0)
@@ -34,7 +35,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 		{
 			t_dst[i] = t_src[i];
 			i++;
-		}	
+		}
 	}
 	return (dst);
 }
@@ -43,7 +44,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 int main (void)
 {
 	char s1[] = "hi";
-    char s4[] = "hello world";
+	char s4[] = "hello world";
 	ft_memmove(s4, s1, 2);
 	ft_putstr_fd(s4, 1);
 	return (0);

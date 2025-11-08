@@ -6,102 +6,111 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:07:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:09:33 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:23:43 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(const char *str, char c);
-static char	*fill_word(const char *str, int start, int end);
-static void	*ft_free(char **strs, int count);
-static void	ft_initiate_vars(size_t *i, int *j, int *s_word);
+static int	ft_is_sep(char c, char *charset);
+static int	ft_word_count(char *str, char *charset);
+static char	*ft_strdup_range(char *str, int start, int end);
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(const char *str, char *charset)
 {
+	int		i;
+	int		start;
+	int		word_i;
+	int		words;
 	char	**res;
-	size_t	i;
-	int		j;
-	int		s_word;
 
-	ft_initiate_vars(&i, &j, &s_word);
-	res = ft_calloc((word_count(s, c) + 1), sizeof(char *));
+	i = 0;
+	word_i = 0;
+	words = ft_word_count(str, charset);
+	res = malloc((words + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	while (i <= ft_strlen(s))
+	while (str[i])
 	{
-		if (s[i] != c && s_word < 0)
-			s_word = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && s_word >= 0)
-		{
-			res[j] = fill_word(s, s_word, i);
-			if (!(res[j]))
-				return (ft_free(res, j));
-			s_word = -1;
-			j++;
-		}
-		i++;
+		while (str[i] && ft_is_sep(str[i], charset))
+			i++;
+		start = i;
+		while (str[i] && !ft_is_sep(str[i], charset))
+			i++;
+		if (start < i)
+			res[word_i++] = ft_strdup_range(str, start, i);
 	}
+	res[word_i] = NULL;
 	return (res);
 }
 
-static void	ft_initiate_vars(size_t *i, int *j, int *s_word)
-{
-	*i = 0;
-	*j = 0;
-	*s_word = -1;
-}
-
-static void	*ft_free(char **strs, int count)
+static int	ft_is_sep(char c, char *charset)
 {
 	int	i;
 
 	i = 0;
-	while (i < count)
+	while (charset[i])
 	{
-		free(strs[i]);
+		if (c == charset[i])
+			return (1);
 		i++;
 	}
-	free(strs);
-	return (NULL);
+	return (0);
 }
 
-static char	*fill_word(const char *str, int start, int end)
+static int	ft_word_count(char *str, char *charset)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (str[i] && ft_is_sep(str[i], charset))
+			i++;
+		if (str[i])
+		{
+			count++;
+			while (str[i] && !ft_is_sep(str[i], charset))
+				i++;
+		}
+	}
+	return (count);
+}
+
+static char	*ft_strdup_range(char *str, int start, int end)
 {
 	char	*word;
 	int		i;
 
-	i = 0;
-	word = malloc((end - start + 1) * sizeof(char));
+	word = malloc((end - start + 1) * sizeof(char *));
 	if (!word)
 		return (NULL);
+	i = 0;
 	while (start < end)
-	{
-		word[i] = str[start];
-		i++;
-		start++;
-	}
-	word[i] = 0;
+		word[i++] = str[start++];
+	word[i] = '\0';
 	return (word);
 }
 
-static int	word_count(const char *str, char c)
+/* int	main(void)
 {
-	int count;
-	int x;
+	char **tab;
+	int i = 0;
+	int j;
 
-	count = 0;
-	x = 0;
-	while (*str)
+	tab = ft_split("Hello,,world;this is|42", ",;| ");
+	while (tab[i])
 	{
-		if (*str != c && x == 0)
-		{
-			x = 1;
-			count++;
+		j = 0;
+		while (tab[i][j])
+		{ 
+			write(1, &tab[i][j], 1);
+			j++;
 		}
-		else if (*str == c)
-			x = 0;
-		str++;
+		write(1, "\n", 1);
+		i++;
 	}
-	return (count);
-}
+	return(0);
+} */
