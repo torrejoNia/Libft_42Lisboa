@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:08:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 17:42:04 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:10:19 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,18 @@
 /* void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *str, int fd); */
 
+/**
+ * @brief Searches for a byte in a memory block.
+ * @param const void *s
+ * @param int c
+ * @param size_t n
+ * @return void* — pointer to first occurrence or NULL
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*str;
-	size_t			i;
-	unsigned char	uc;
+	size_t				i;
+	unsigned char		uc;
 
 	str = (unsigned char *)s;
 	uc = (unsigned char)c;

@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:56:06 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 17:41:06 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:50:36 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 /* void	ft_putnbr_fd(int n, int fd); */
 
+/**
+ * @brief Sets a block of memory to zero.
+ * @param void *s
+ * @param num size_t n — memory block and number of bytes.
+ * @return void
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*a;

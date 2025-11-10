@@ -6,15 +6,22 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:14:47 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:16:12 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 16:52:13 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* void		ft_putstr_fd(char *str, int fd); */
+
 static int	int_len(long nbr);
 static char	*pre_conv(int len);
 
+/**
+ * @brief Converts an integer to a string
+ * @param int n — integer to convert
+ * @return char* — newly allocated string
+ */
 char	*ft_itoa(int n)
 {
 	int		len;
@@ -27,6 +34,9 @@ char	*ft_itoa(int n)
 	result = pre_conv(len);
 	if (!result)
 		return (NULL);
+	i = len - 1;
+	if (n < 0)
+		nbr = -nbr;
 	while (nbr != 0)
 	{
 		result[i] = ((nbr % 10) + 48);
@@ -50,7 +60,7 @@ static char	*pre_conv(int len)
 	return (tmp);
 }
 
-static	int_len(long nbr)
+static int	int_len(long nbr)
 {
 	int	count;
 
@@ -64,8 +74,20 @@ static	int_len(long nbr)
 		count++;
 	while (nbr != 0)
 	{
-		nbr /= 10;
+		nbr = nbr / 10;
 		count++;
 	}
 	return (count);
 }
+
+/*
+int	main(void)
+{
+	int		i;
+	char	*s;
+
+	i = 0;
+	s = ft_itoa(-305);
+	ft_putstr_fd(s, 1);
+	return (0);
+} */

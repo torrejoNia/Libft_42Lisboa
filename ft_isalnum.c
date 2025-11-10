@@ -6,12 +6,17 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:02:52 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 17:06:29 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 16:00:21 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Checks if a character is alphanumeric
+ * @param int c
+ * @return int — nonzero if true, 0 if false
+ */
 int	ft_isalnum(int c)
 {
 	if (((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) || c >= 49 && c <= 57)

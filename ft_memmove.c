@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:22:54 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 17:47:57 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:14:35 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,36 @@
 
 /* void	ft_putstr_fd(char *str, int fd); */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+/**
+ * @brief Copies bytes between memory areas (handles overlapping)
+ * @param void *dest
+ * @param const void *src
+ * @param size_t n
+ * @return void* — destination pointer
+ */
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char	*t_src;
-	unsigned char	*t_dst;
-	size_t	i;
+	unsigned char		*t_dst;
+	size_t				i;
 
-	if (!dst && !src)
+	if (!dest && !src)
 		return (NULL);
 	t_src = (const unsigned char *)src;
-	t_dst = (unsigned char *)dst;
+	t_dst = (unsigned char *)dest;
 	i = 0;
 	if (t_dst > t_src)
-		while (len-- > 0)
-			t_dst[len] = t_src[len];
+		while (n-- > 0)
+			t_dst[n] = t_src[n];
 	else
 	{
-		while (i < len)
+		while (i < n)
 		{
 			t_dst[i] = t_src[i];
 			i++;
 		}
 	}
-	return (dst);
+	return (dest);
 }
 
 /*

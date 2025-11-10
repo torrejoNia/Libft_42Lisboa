@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:05:51 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 17:45:48 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:13:15 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 
 /* void	ft_putstr_fd(char *str, int fd); */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+/**
+ * @brief Copies bytes from one memory area to another (non-overlapping).
+ * @param void *dest
+ * @param const void *src
+ * @param size_t n
+ * @return oid* — destination pointer
+ */
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*tmp_dst;
+	unsigned char		*tmp_dst;
 	const unsigned char	*tmp_src;
 
-	if (dst == (void *)0 && src == (void *)0)
-		return (dst);
-	tmp_dst = (unsigned char *)dst;
+	if (dest == (void *)0 && src == (void *)0)
+		return (dest);
+	tmp_dst = (unsigned char *)dest;
 	tmp_src = (unsigned char *)src;
 	while (n > 0)
 	{
 		*(tmp_dst++) = *(tmp_src++);
 		n--;
 	}
-	return (dst);
+	return (dest);
 }
 
 /*

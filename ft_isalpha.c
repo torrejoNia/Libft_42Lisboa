@@ -6,10 +6,15 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 12:51:02 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/01 15:54:09 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/10 16:01:44 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief Checks if a character is alphabetic.
+ * @param int c.
+ * @return int — nonzero if true, 0 if false
+ */
 int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
