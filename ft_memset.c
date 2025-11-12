@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:59:47 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 18:15:35 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:20:15 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,24 @@
 
 /* void	ft_putstr_fd(char *str, int fd); */
 
-void	*ft_memset(void *b, int c, size_t len)
+/**
+ * @brief Fills memory with a constant byte.
+ * @param void *s
+ * @param int c
+ * @param size_t n
+ * @return void* — memory area pointer
+ */
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*a;
 
-	a = (unsigned char *)b;
-	while (len > 0)
+	a = (unsigned char *)s;
+	while (n > 0)
 	{
 		*(a++) = (unsigned char)c;
-		len--;
+		n--;
 	}
-	return (b);
+	return (s);
 }
 
 /*

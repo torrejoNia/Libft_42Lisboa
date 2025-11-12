@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:07:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 16:23:43 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:27:10 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@ static int	ft_is_sep(char c, char *charset);
 static int	ft_word_count(char *str, char *charset);
 static char	*ft_strdup_range(char *str, int start, int end);
 
-char	**ft_split(const char *str, char *charset)
+/**
+ * @brief Splits a string by a delimiter into an array of strings.
+ * @param const char *s
+ * @param char c
+ * @return char** — array of substrings
+ */
+char	**ft_split(const char *s, char *c)
 {
 	int		i;
 	int		start;
@@ -26,19 +32,19 @@ char	**ft_split(const char *str, char *charset)
 
 	i = 0;
 	word_i = 0;
-	words = ft_word_count(str, charset);
+	words = ft_word_count(s, c);
 	res = malloc((words + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && ft_is_sep(str[i], charset))
+		while (s[i] && ft_is_sep(s[i], c))
 			i++;
 		start = i;
-		while (str[i] && !ft_is_sep(str[i], charset))
+		while (s[i] && !ft_is_sep(s[i], c))
 			i++;
 		if (start < i)
-			res[word_i++] = ft_strdup_range(str, start, i);
+			res[word_i++] = ft_strdup_range(s, start, i);
 	}
 	res[word_i] = NULL;
 	return (res);
