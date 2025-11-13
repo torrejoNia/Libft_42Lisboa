@@ -6,13 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:59:47 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/12 16:20:15 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:45:35 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putstr_fd(char *str, int fd); */
 
 /**
  * @brief Fills memory with a constant byte.

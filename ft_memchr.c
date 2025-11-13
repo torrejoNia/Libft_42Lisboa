@@ -6,14 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:08:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 18:10:19 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:45:17 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd); */
 
 /**
  * @brief Searches for a byte in a memory block.

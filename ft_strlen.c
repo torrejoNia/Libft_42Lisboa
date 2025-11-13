@@ -6,14 +6,17 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:45:39 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 18:09:13 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:13 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_putnbr_fd(int n, int fd); */
-
+/**
+ * @brief Returns the length of a string
+ * @param const char *s
+ * @return size_t
+ */
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;

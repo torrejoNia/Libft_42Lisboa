@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:04:32 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 18:09:20 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:44:44 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(void *content);
-*/
 
 /**
  * @brief Adds a node at the end of a list.
@@ -27,17 +20,17 @@ t_list	*ft_lstnew(void *content);
  */
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list	*temp;
 
-	if (!lst || !new)
+	if (!new)
 		return ;
-	if (!lst)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	temp = ft_lstlast(*lst);
+	temp->next = new;
 }
 
 /*

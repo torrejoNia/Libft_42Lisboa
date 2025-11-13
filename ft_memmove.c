@@ -6,14 +6,12 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:22:54 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 18:14:35 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:45:30 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-/* void	ft_putstr_fd(char *str, int fd); */
 
 /**
  * @brief Copies bytes between memory areas (handles overlapping)

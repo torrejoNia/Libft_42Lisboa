@@ -6,9 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 12:51:02 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 16:01:44 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:44:20 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /**
  * @brief Checks if a character is alphabetic.

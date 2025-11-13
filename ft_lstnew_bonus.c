@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 15:57:32 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:58:08 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 15:54:18 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/11/13 21:17:50 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+/**
+ * @brief Creates a new list node.
+ * @param void *content
+ * @return t_list*
+ */
+t_list	*ft_lstnew(void *content)
 {
-	t_list *tmp;
+	t_list	*elem;
 
-	if (!lst)
+	elem = malloc(sizeof(t_list));
+	if (!elem)
 		return (NULL);
-	tmp = lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	elem->content = content;
+	elem->next = NULL;
+	return (elem);
 }

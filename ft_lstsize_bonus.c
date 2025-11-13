@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 16:13:49 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 16:18:36 by esnavarr         ###   ########.fr       */
+/*   Created: 2025/10/27 15:56:37 by esnavarr          #+#    #+#             */
+/*   Updated: 2025/11/13 21:17:46 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+/**
+ * @brief Counts the number of nodes in a list.
+ * @param t_list *lst
+ * @return int
+ */
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_list;
-	t_list	*new_obj;
+	t_list	*tmp;
+	int		i;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new_list = NULL;
-	while (lst)
+	if (!lst)
+		return (0);
+	tmp = lst;
+	i = 0;
+	while (tmp)
 	{
-		new_obj = ft_lstnew(f(lst->content));
-		if (!new_obj)
-		{
-			ft_lstclear(&new_list, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_list, new_obj);
-		lst = lst->next;
+		tmp = tmp->next;
+		i++;
 	}
-	return (new_list);
+	return (i);
 }

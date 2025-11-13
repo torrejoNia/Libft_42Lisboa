@@ -6,15 +6,15 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:07:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/12 17:27:10 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:53 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_sep(char c, char *charset);
-static int	ft_word_count(char *str, char *charset);
-static char	*ft_strdup_range(char *str, int start, int end);
+static int	ft_is_sep(char c, char sep);
+static int	ft_word_count(const char *str, char sep);
+static char	*ft_strdup_range(const char *str, int start, int end);
 
 /**
  * @brief Splits a string by a delimiter into an array of strings.
@@ -22,20 +22,21 @@ static char	*ft_strdup_range(char *str, int start, int end);
  * @param char c
  * @return char** — array of substrings
  */
-char	**ft_split(const char *s, char *c)
+char	**ft_split(const char *s, char c)
 {
-	int		i;
-	int		start;
-	int		word_i;
-	int		words;
-	char	**res;
+	unsigned int	i;
+	unsigned int	start;
+	unsigned int	word_i;
+	char			**res;
 
-	i = 0;
+	if (!s)
+		return (NULL);
 	word_i = 0;
-	words = ft_word_count(s, c);
-	res = malloc((words + 1) * sizeof(char *));
+	i = ft_word_count(s, c);
+	res = malloc((i + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
+	i = 0;
 	while (s[i])
 	{
 		while (s[i] && ft_is_sep(s[i], c))
@@ -50,21 +51,12 @@ char	**ft_split(const char *s, char *c)
 	return (res);
 }
 
-static int	ft_is_sep(char c, char *charset)
+static int	ft_is_sep(char c, char sep)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
-	return (0);
+	return (c == sep);
 }
 
-static int	ft_word_count(char *str, char *charset)
+static int	ft_word_count(const char *str, char sep)
 {
 	int	i;
 	int	count;
@@ -73,24 +65,24 @@ static int	ft_word_count(char *str, char *charset)
 	count = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_is_sep(str[i], charset))
+		while (str[i] && ft_is_sep(str[i], sep))
 			i++;
 		if (str[i])
 		{
 			count++;
-			while (str[i] && !ft_is_sep(str[i], charset))
+			while (str[i] && !ft_is_sep(str[i], sep))
 				i++;
 		}
 	}
 	return (count);
 }
 
-static char	*ft_strdup_range(char *str, int start, int end)
+static char	*ft_strdup_range(const char *str, int start, int end)
 {
 	char	*word;
 	int		i;
 
-	word = malloc((end - start + 1) * sizeof(char *));
+	word = malloc((end - start + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
 	i = 0;
@@ -106,12 +98,12 @@ static char	*ft_strdup_range(char *str, int start, int end)
 	int i = 0;
 	int j;
 
-	tab = ft_split("Hello,,world;this is|42", ",;| ");
+	tab = ft_split("Hello,,world,this is|42", ",");
 	while (tab[i])
 	{
 		j = 0;
 		while (tab[i][j])
-		{ 
+		{
 			write(1, &tab[i][j], 1);
 			j++;
 		}

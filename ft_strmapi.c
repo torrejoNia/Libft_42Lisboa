@@ -6,16 +6,22 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:16:48 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/10/27 15:17:22 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:15:05 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Applies a function to each character to create a new string.
+ * @param const char *s
+ * @param char (*f)(unsigned int, char) - the function to apply
+ * @return char*
+ */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
-	char *res;
+	unsigned int	i;
+	char			*res;
 
 	res = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!res)

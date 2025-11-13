@@ -6,17 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:00:58 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/12 17:25:36 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:06 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putstr_fd(char *str, int fd);
-void	ft_putnbr_fd(int n, int fd); */
-
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 /**
  * @brief Appends string src to dst, ensuring size limit.

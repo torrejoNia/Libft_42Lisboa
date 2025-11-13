@@ -6,13 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:14:47 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 16:52:13 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:44:35 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void		ft_putstr_fd(char *str, int fd); */
 
 static int	int_len(long nbr);
 static char	*pre_conv(int len);

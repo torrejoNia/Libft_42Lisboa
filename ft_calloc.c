@@ -6,13 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:33:41 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 15:58:48 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:44:03 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putnbr_fd(int n, int fd); */
 
 /**
  * @brief Allocates and zeroes memory for an array.

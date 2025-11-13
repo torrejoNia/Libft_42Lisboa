@@ -6,13 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:01:54 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 18:11:15 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:45:22 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putnbr_fd(int n, int fd); */
 
 /**
  * @brief Compares two memory blocks.

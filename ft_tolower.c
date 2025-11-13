@@ -6,14 +6,17 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:40:25 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 13:34:40 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:35 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_putchar_fd(char c, int fd); */
-
+/**
+ * @brief Converts an uppercase letter to lowercase.
+ * @param int c
+ * @return int — lowercase equivalent.
+ */
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)

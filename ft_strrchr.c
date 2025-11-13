@@ -6,20 +6,23 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:52:17 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 18:00:03 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:26 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd); */
-
+/**
+ * @brief Finds the last occurrence of a character in a string.
+ * @param const char *s
+ * @param int c
+ * @return char*
+ */
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	char			*res;
-	char			cc;
+	int		i;
+	char	*res;
+	char	cc;
 
 	cc = (char)c;
 	res = NULL;

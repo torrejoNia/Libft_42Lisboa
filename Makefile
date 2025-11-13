@@ -3,6 +3,7 @@ NAME = libft.a
 SRCS = ft_putchar_fd.c \
        ft_putendl_fd.c \
        ft_putnbr_fd.c \
+	   ft_putstr_fd.c \
        ft_bzero.c \
        ft_calloc.c \
 	   ft_memchr.c \

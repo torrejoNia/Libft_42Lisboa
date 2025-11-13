@@ -6,13 +6,11 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:33:07 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/10 15:49:01 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:43:52 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* void	ft_putnbr_fd(int n, int fd); */
 
 static int	ft_isspace(int c)
 {

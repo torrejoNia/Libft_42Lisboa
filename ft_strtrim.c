@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:04:52 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 18:00:00 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:14:45 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 static int	to_trim(const char *set, char c);
 static char	*new_str(const char *s1, size_t start, size_t end);
 
+/**
+ * @brief Removes specified characters from the start and end of a string.
+ * @param const char *s1
+ * @param const char *set
+ * @return char*
+ */
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	int	i;

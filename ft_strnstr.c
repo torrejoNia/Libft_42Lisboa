@@ -6,28 +6,35 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:49:53 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 13:59:59 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:14:56 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+/**
+ * @brief Searches for a substring in a string within n characters.
+ * @param const char *big
+ * @param const char *little
+ * @param size_t len - compara until this
+ * @return char* — pointer to first match or NULL.
+ */
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (needle[0] == 0)
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+	if (little[0] == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		while (big[i + j] == little[j] && big[i + j] && i + j < len)
 		{
 			j++;
-			if (needle[j] == 0)
-				return ((char *)haystack + i);
+			if (little[j] == 0)
+				return ((char *)big + i);
 		}
 		i++;
 		j = 0;

@@ -6,14 +6,19 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:07:25 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/08 13:35:25 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:46:19 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_putnbr_fd(int n, int fd); */
-
+/**
+ * @brief Compares two strings up to n characters.
+ * @param const char *s1
+ * @param const char *s2
+ * @param size_t n
+ * @return int - (S1 - S2)
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

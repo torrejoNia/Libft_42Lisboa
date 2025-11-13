@@ -6,23 +6,21 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:50:19 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/12 17:17:59 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:45:55 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* size_t	ft_strlen(const char *s); */
-
 /**
  * @brief Duplicates a string.
- * @param const char *s1.
+ * @param const char *s.
  * @return char* — newly allocated duplicate.
  */
 char	*ft_strdup(const char *s)
 {
-	char *dest;
-	size_t i;
+	char	*dest;
+	size_t	i;
 
 	dest = (char *)malloc(ft_strlen(s) + 1);
 	if (!dest)
