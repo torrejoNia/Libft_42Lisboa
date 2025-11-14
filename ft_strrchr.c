@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 16:52:17 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/13 23:46:26 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:55:54 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 			res = (char *)&s[i];
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == cc)
 		res = (char *)&s[i];
 	return (res);
 }
