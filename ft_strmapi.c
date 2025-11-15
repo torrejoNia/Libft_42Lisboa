@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:16:48 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/13 21:15:05 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/15 15:46:32 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*res;
 
+	if (!s || !f)
+		return (NULL);
 	res = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!res)
 		return (NULL);

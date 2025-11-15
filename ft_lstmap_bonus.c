@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:13:49 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/13 23:24:11 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/15 15:31:23 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*tmp;
+	void	*new_content;
 
 	if (!f || !lst || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst != NULL)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		new_content = f(lst->content);
+		tmp = ft_lstnew(new_content);
 		if (!tmp)
 		{
+			del(new_content);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}

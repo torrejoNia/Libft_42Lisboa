@@ -6,15 +6,15 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:07:22 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/13 23:46:53 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/15 15:21:07 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_sep(char c, char sep);
 static int	ft_word_count(const char *str, char sep);
 static char	*ft_strdup_range(const char *str, int start, int end);
+static int	extract_words(char **res, const char *s, char c);
 
 /**
  * @brief Splits a string by a delimiter into an array of strings.
@@ -24,39 +24,33 @@ static char	*ft_strdup_range(const char *str, int start, int end);
  */
 char	**ft_split(const char *s, char c)
 {
-	unsigned int	i;
-	unsigned int	start;
-	unsigned int	word_i;
 	char			**res;
+	unsigned int	wc;
+	int				err;
+	int				i;
 
 	if (!s)
 		return (NULL);
-	word_i = 0;
-	i = ft_word_count(s, c);
-	res = malloc((i + 1) * sizeof(char *));
+	wc = ft_word_count(s, c);
+	res = malloc((wc + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (s[i])
+	err = extract_words(res, s, c);
+	if (err >= 0)
 	{
-		while (s[i] && ft_is_sep(s[i], c))
+		i = 0;
+		while (i < err)
+		{
+			free(res[i]);
 			i++;
-		start = i;
-		while (s[i] && !ft_is_sep(s[i], c))
-			i++;
-		if (start < i)
-			res[word_i++] = ft_strdup_range(s, start, i);
+		}
+		free(res);
+		return (NULL);
 	}
-	res[word_i] = NULL;
 	return (res);
 }
 
-static int	ft_is_sep(char c, char sep)
-{
-	return (c == sep);
-}
-
-static int	ft_word_count(const char *str, char sep)
+static int	ft_word_count(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -65,12 +59,12 @@ static int	ft_word_count(const char *str, char sep)
 	count = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_is_sep(str[i], sep))
+		while (str[i] && str[i] == c)
 			i++;
 		if (str[i])
 		{
 			count++;
-			while (str[i] && !ft_is_sep(str[i], sep))
+			while (str[i] && str[i] != c)
 				i++;
 		}
 	}
@@ -92,13 +86,41 @@ static char	*ft_strdup_range(const char *str, int start, int end)
 	return (word);
 }
 
-/* int	main(void)
+static int	extract_words(char **res, const char *s, char c)
+{
+	unsigned int	w;
+	unsigned int	i;
+	unsigned int	start;
+
+	w = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (start < i)
+		{
+			res[w] = ft_strdup_range(s, start, i);
+			if (!res[w])
+				return (w);
+			w++;
+		}
+	}
+	res[w] = NULL;
+	return (-1);
+}
+
+/*
+int	main(void)
 {
 	char **tab;
 	int i = 0;
 	int j;
 
-	tab = ft_split("Hello,,world,this is|42", ",");
+	tab = ft_split("Hello,,world,this is|42", ',');
 	while (tab[i])
 	{
 		j = 0;
@@ -110,5 +132,5 @@ static char	*ft_strdup_range(const char *str, int start, int end)
 		write(1, "\n", 1);
 		i++;
 	}
-	return(0);
-} */
+	return (0);
+}  */
