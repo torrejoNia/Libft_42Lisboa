@@ -6,7 +6,7 @@
 /*   By: esnavarr <esnavarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:54:18 by esnavarr          #+#    #+#             */
-/*   Updated: 2025/11/15 15:55:49 by esnavarr         ###   ########.fr       */
+/*   Updated: 2025/11/15 16:05:57 by esnavarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ t_list	*ft_lstnew(void *content)
 	elem->next = NULL;
 	return (elem);
 }
-
